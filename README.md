@@ -10,6 +10,8 @@ Este proyecto demuestra dos enfoques de Retrieval-Augmented Generation (RAG) uti
 
 ## Arquitectura del proyecto
 
+<img src="assets/6.jpeg">
+
 La arquitectura se compone de:
 
 ```
@@ -37,4 +39,30 @@ src/
 
 ## Instalación
 
-1. Crear un entorno Node limpio
+1. Clonar el proyecto
+2. Crear un entorno Node: `npm init -y`
+3. Instalar dependencias: `npm install @langchain/openai @langchain/community @langchain/core @langchain/textsplitters hnswlib-node cheerio zod dotenv`
+4. Configurar la API Key de OpenAI en el archivo .env
+
+---
+
+## Ejecución
+
+1. Indexar el documento: `node src/indexing.mjs`. Esto descarga el artículo base y genera el índice vectorial.
+<img src="assets/3.png" width="1200px">
+2. Ejecutar el flujo Agentic RAG: `node src/run.mjs`
+<img src="assets/5.png" width="1200px">
+3. Ejecutar el flujo RAG Chain: `node src/run_chain.mjs`
+<img src="assets/4.png" width="1200px">
+
+---
+
+## Diferencias entre los dos enfoques
+
+| Aspecto                  | Agentic RAG       | RAG Chain            |
+| ------------------------ | -------------------- | -------------------------- |
+| Búsqueda controlada por  | El LLM (autónomo)    | El pipeline (determinista) |
+| Nº de búsquedas          | Múltiples            | Una sola                   |
+| Flexibilidad             | Alta                 | Media                      |
+| Latencia                 | Mayor                | Menor                      |
+| Ideal para               | Agentes interactivos | Consultas rápidas tipo QA  |

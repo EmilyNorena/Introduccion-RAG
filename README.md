@@ -10,7 +10,7 @@ Este proyecto demuestra dos enfoques de Retrieval-Augmented Generation (RAG) uti
 
 ## Arquitectura del proyecto
 
-<img src="assets/6.jpeg">
+<img src="assets/6.jpg" width="500px">
 
 La arquitectura se compone de:
 

@@ -37,6 +37,4 @@ src/
 
 ## Instalación
 
-1. Clonar el proyecto
-`git clone https://github.com/tuusuario/introduccion-rag.git`
-cd introduccion-rag
+1. Crear un entorno Node limpio
